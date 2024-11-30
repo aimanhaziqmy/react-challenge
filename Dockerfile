@@ -23,14 +23,10 @@ COPY --from=build /app/dist ./dist
 # Copy db.json for json-server
 COPY db.json .
 
-# Create a startup script
-RUN echo '#!/bin/sh\n\
-serve -s dist -l 3300 & \
-json-server --watch db.json --port 3000 --host 0.0.0.0\n\
-wait' > /app/start.sh && chmod +x /app/start.sh
-
 # Expose ports for serve and json-server
-EXPOSE 3300 3000
+EXPOSE 3400 3200
 
-# Start both servers
-CMD ["/bin/sh", "/app/start.sh"]
+# Set environment variable
+ENV NODE_ENV=development
+
+CMD ["sh", "-c", "serve -s dist -l 3400 & json-server db.json --port 3200 --host 0.0.0.0"]
