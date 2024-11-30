@@ -1,0 +1,115 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.task-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.task-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.task-item {
+  color: #333;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.custom-checkbox {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.custom-checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: #029502;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.custom-checkbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.deps-container {
+  margin-left: 5rem;
+}
+
+.task-status {
+  font-size: 0.85rem;
+}
+
+.task-button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ccc;
+  color: #333;
+  width: 100px;
+  margin-top: 0.5rem;
+}
