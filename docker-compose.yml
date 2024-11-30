@@ -1,0 +1,23 @@
+version: "3.0"
+
+services:
+  react-challenge:
+    container_name: react-challenge
+    image: react-challenge:latest
+    restart: unless-stopped
+    ports:
+      - "3400:3400"
+      - "3200:3200"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.react-challenge.entrypoints=web,websecure
+      - traefik.http.routers.react-challenge.tls=true
+      - traefik.http.routers.react-challenge.tls.certresolver=lets-encrypt
+      - traefik.http.services.react-challenge.loadbalancer.server.port=3400
+      - traefik.http.routers.react-challenge.rule=Host(`react-challenge.aimanhaziq.my`)
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
