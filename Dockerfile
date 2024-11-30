@@ -23,6 +23,9 @@ COPY --from=build /app/dist ./dist
 # Copy db.json for json-server
 COPY db.json .
 
+# Copy cors.js
+COPY cors.js .
+
 # Expose ports for serve and json-server
 EXPOSE 3400 3200
 
