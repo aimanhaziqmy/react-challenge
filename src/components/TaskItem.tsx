@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Task } from "../../types";
 import { fetchTasks } from "../services/api";
 import { useNavigate } from "react-router";
-import "./TaskItem.css";
+import "./taskitem.css";
 
 interface TaskItemProps {
   task: Task;
