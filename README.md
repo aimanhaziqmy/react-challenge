@@ -74,3 +74,18 @@ or
 yarn build
 ```
 
+
+
+### Build with Docker
+
+1. Execute the docker build command
+```
+docker build -t text-analyzer-challenge:latest .
+```
+
+2. Then execute the docker run command
+```
+docker run -p 3400:3400 -p 3200:3200  react-challenge:latest
+```
+
+3. Access the application on [http://localhost:3400](http://localhost:3400)
