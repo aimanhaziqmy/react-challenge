@@ -3,8 +3,8 @@ import { Task, TaskWithDependencies } from "../../types";
 
 const API_URL =
   process.env.NODE_ENV === "development"
-    ? "http://localhost:3000"
-    : "http://host.docker.internal:3000";
+    ? "http://localhost:3200"
+    : "http://host.docker.internal:3200";
 
 // Fetch all tasks
 export const fetchTasks = async (): Promise<Task[]> => {
