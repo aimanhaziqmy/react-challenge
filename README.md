@@ -15,7 +15,7 @@ This project is a task management application built with React and Vite as part 
 - React
 - Vite
 - JSON Server (for mock backend)
-- CSS (or mention your styling solution, e.g., Styled Components, Tailwind CSS)
+- CSS
 
 ## Getting Started
 
